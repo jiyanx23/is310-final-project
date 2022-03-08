@@ -11,5 +11,18 @@ Jerry Xu and Liang Qiu
   
   Revelant course materials
 ### Methodology
+  We will be exploring the gender distribution in the community as well as diversity and growing trend of people coming to this platform. The major topic for this project will be to explain how well does female streamers perform comparing to male streamers. Is there any kind of unequal distribution to female popularities to male popularities in differnt genre. Are there any distinctive characterers that differs between male and female streamers. How does streaming content divide streamer population and how well does the community react to different streamers.
+
+  Some of the tools we will be using is Twitch API, Twitch tracker, as well as examining clips to acquire necessary data. Twitch API is an userful tool to get live images, videos and streamer stats. Twitch tracker is a tool to get streamer status as well as viewr status: viewer counts, channel status. We will also use specific clips to verify and suppliment in our data collection process.
+  
+  We will be mainly doing numeric as well as text analysis to explore our topics. The project will be divided into couple parts. First, we will look at popularity distribution on the platform in general. Then,we will look into population distribution in different genre and find existing factors that might potentially explain the distribution. We will also be looking into viewer counts between the two group. Additonally, we are thinking to collect some form of viewer chat logs to examine the difference between male and female streamer communities. We will be presenting and analyzing data using tables and baic graphs (line graph, histogram, pie charts...)
 
 ### Work Plan
+
+1. Understand the tools we are working with
+2. Start the data collection process
+3. Clean and organize data
+4. Doing data analysis
+5. Doing data visualization
+6. Explanation and conclusion
+7. Further research needed
