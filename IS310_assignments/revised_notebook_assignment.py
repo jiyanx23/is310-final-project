@@ -4,7 +4,7 @@
 
 from bs4 import BeautifulSoup
 import requests
-import pandas
+import pandas as pd
 
 def scrape_webpage(url): #rename function to be more meaningful
     response = requests.get(url)
@@ -15,7 +15,7 @@ def scrape_webpage(url): #rename function to be more meaningful
 # Step 1: Create a function for getting the urls wuth title
 
 #lowercase and underscores are the normal convention for naming functions in Python. Camelcasing like you had is more normal in JavaScript or for classes.
-def get_content(url='', keyword='', filename='', url_head="https://humanist.kdl.kcl.ac.uk/Archives/Converted_Text/"):
+def get_content(url, keyword, url_head):
     content = scrape_webpage(url)
     soup = BeautifulSoup(content, "html.parser")
     links = soup.find_all('a')
@@ -27,8 +27,6 @@ def get_content(url='', keyword='', filename='', url_head="https://humanist.kdl.
         text = link.get_text().lower()
         if keyword in text:
             result[text] = url_head + link.get('href')
-            # linkList.append(url_head + link.get('href'))
-            # volumeList.append(text)
 
     # res = dict(zip(volumeList, linkList))
 
@@ -45,18 +43,23 @@ def scraping(links):
     for key, value in links.items():
         data_dictionary = {}
         metadata_date = key.split(".")[1]
+        data_dictionary["dates"] = metadata_date
+        # print(f"{key}    {value}")
         content = scrape_webpage(value)
         soup = BeautifulSoup(content, "html.parser")
         data = soup.get_text()
-        data_dictionary[metadata_date] = data
+        data_dictionary["text"] = data
+        data_dictionary["url"] = value
         data_list.append(data_dictionary)
+    return data_list
 
 def main():
-    res = get_content(url="https://humanist.kdl.kcl.ac.uk/Archives/Converted_Text/",keyword="humanist",filename="")
+    res = get_content(url="https://humanist.kdl.kcl.ac.uk/Archives/Converted_Text/",keyword="humanist",url_head="https://humanist.kdl.kcl.ac.uk/Archives/Converted_Text/")
 
     content_dic = scraping(res)
-    dataframe = pd.DataFrame.from_dict(content_dic, orient='columns')
-    dataframe.to_csv('web_scraped_humanist_listserv.csv')
+    humanist_vols = pd.DataFrame.from_records(content_dic,columns=['dates','text','url'])
+
+    humanist_vols.to_csv('web_scraped_humanist_listserv.csv', index=False)
 
    
 
