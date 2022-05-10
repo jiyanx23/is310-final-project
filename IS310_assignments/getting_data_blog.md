@@ -1,0 +1,5 @@
+## GETting Data
+
+For today's reading, I've realized the issue of how our data is being collected and the life cycle of the data after being collected. The new york time article 'your apps know where you were last night' shows how our data is being collected without us realizing. It's scary to think about this, since our privacy is at risk. However, it's hard to completely avoid this kind of situation, as we live in a society where techonlogy is being used heavily and intensively. It's embedded in our life. I think it's mostly about awareness and maybe company policy of data collection. It's ethical to collect with consent and only collect what they need. On the other hand, I can also argue from the data collector's side, since I don't know how collected data will affect research or analysis, so I need to collect them all.
+
+Personally I don't really have an issue with data privacy, at least not yet. I do have an awareness of what's being collected from using apps on my phone and being on the internet. I rarely post anything important online, and usually use "fake" information to signup for website that are not really relevant to keep my information safe.
